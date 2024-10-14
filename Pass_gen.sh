@@ -26,5 +26,7 @@ else
 charSet="a-zA-Z0-9!@#$%^&*()-_+=:;'"/?.>,<{[|}]|\`~"
 fi
 
-tr $charSet </dev/urandom | head -c $pass_len;
-echo ''
+#Echo a message to indicate when the password is provided and explain where is gets stored.
+echo "Your password was generated with a complexity of $pass_Comp and a length of $pass_len. This is your random password:"
+(tr -dc $charSet </dev/urandom | head -c $pass_len;echo '') > random_pass.txt
+echo "Your random passsword is stored in the random_pass.txt file"
