@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Offers the option to increase password Complexity and length and then determines the character set used to generate the password based off those parameters
-echo "Please select the Password Complexity 1-5 - (The default value is 3)"
+echo "Please select the Password Complexity 1-5 - (The default value is 3 - If help is needed type -h now)"
 read pass_Comp
 echo "Please enter the password length - (The default is 15 characters long):"
 read pass_len
@@ -13,6 +13,11 @@ fi
 #If no length is set default to NIST recommandation of 15 characters
 if [[ -z "$pass_len" ]]; then
 pass_len=15
+fi
+#Adding in a help function 
+if [ "$pass_Comp" == "-h" ]; then
+  echo "Usage: Generate a random password. Please input a valid Complexity value of 1-5 and a length greater than 0"
+  exit 0
 fi
 #Define the output file for later use
 output="random_pass.txt"
@@ -32,7 +37,7 @@ charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}{]|\[`~ "
 charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}>,<|{]|\[`~ "
 fi
 
-#Echo a message to indicate when the password is provided and explain where is gets stored.
+#Echo a message to indicate when the password is provided and explain where is gets stored. Tee is used to type the file to the script
 echo "Your password was generated with a complexity of $pass_Comp and a length of $pass_len. This is your random password:"
 tr -dc $charSet </dev/urandom | head -c "$pass_len" | tee -a "$output"
 echo '' | tee -a "$output"
