@@ -21,11 +21,15 @@ output="random_pass.txt"
 if [[ $pass_Comp == 1 ]]; then
 charSet="a-zA-Z"
 elif [[ $pass_Comp == 2 ]]; then
-charSet="a-zA-Z0-9!#$"
+charSet="a-zA-Z0-9"
 elif [[ $pass_Comp == 3 ]]; then
-charSet="a-zA-Z0-9!@#$%^&*()-_+=:;'"/?.>,<{[|}]|\`~"
-else 
-charSet="a-zA-Z0-9!@#$%^&*()-_+=:;'"/?.>,<{[|}]|\`~"
+charSet="a-zA-Z0-9!#$"
+elif [[ $pass_Comp == 4 ]]; then
+charSet="a-zA-Z0-9!@#$%^)*("
+elif [[ $pass_Comp == 5 ]]; then
+charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}{]|\[`~ "
+    else 
+charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}>,<|{]|\[`~ "
 fi
 
 #Echo a message to indicate when the password is provided and explain where is gets stored.
