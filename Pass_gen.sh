@@ -14,6 +14,8 @@ fi
 if [[ -z "$pass_len" ]]; then
 pass_len=15
 fi
+#Define the output file for later use
+output="random_pass.txt"
 
 #Check the complexity that was set by user
 if [[ $pass_Comp == 1 ]]; then
@@ -28,5 +30,6 @@ fi
 
 #Echo a message to indicate when the password is provided and explain where is gets stored.
 echo "Your password was generated with a complexity of $pass_Comp and a length of $pass_len. This is your random password:"
-(tr -dc $charSet </dev/urandom | head -c $pass_len;echo '') > random_pass.txt
+tr -dc $charSet </dev/urandom | head -c "$pass_len" | tee -a "$output"
+echo '' | tee -a "$output"
 echo "Your random passsword is stored in the random_pass.txt file"
