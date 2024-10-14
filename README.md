@@ -11,8 +11,9 @@ My main use for this script is to stop a bad behavoir that I personally practice
 
 # Getting Started
 
-Before starting make sure to create a random_pass.txt file for the script to save to. Then get the script and start it and enter your desired values and save the passwords you want.
+Simply have the script run and input the desired values, it will create the text file on it's own. 
 
 # Help Function
+
 
 -h: will display the usage of the command and give an example for how to generate a password.
