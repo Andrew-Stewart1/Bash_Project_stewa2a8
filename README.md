@@ -15,5 +15,5 @@ Simply have the script run and input the desired values, it will create the text
 
 # Help Function
 
-
+The help function must be used as the first input in the script (When tested other ways an error is produced.)
 -h: will display the usage of the command and give an example for how to generate a password.
