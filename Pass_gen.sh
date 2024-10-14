@@ -32,9 +32,9 @@ charSet="a-zA-Z0-9!#$"
 elif [[ $pass_Comp == 4 ]]; then
 charSet="a-zA-Z0-9!@#$%^)*("
 elif [[ $pass_Comp == 5 ]]; then
-charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}{]|\[`~ "
+charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}{'~]|\["
     else 
-charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}>,<|{]|\[`~ "
+charSet="a-zA-Z0-9!@#$%^&)*(-_+=:;'/?.}>,<|{]|\'~["
 fi
 
 #Echo a message to indicate when the password is provided and explain where is gets stored. Tee is used to type the file to the script
