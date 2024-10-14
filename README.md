@@ -13,7 +13,14 @@ My main use for this script is to stop a bad behavoir that I personally practice
 
 Simply have the script run and input the desired values, it will create the text file on it's own. 
 
+# How to Use
+
+- Start the script with ./Pass_gen.sh
+- It will then prompt for inputs, provide a number between 1-5 and then any number you desire
+- It will output these to the terminal and a text file
+
 # Help Function
 
 The help function must be used as the first input in the script (When tested other ways an error is produced.)
 -h: will display the usage of the command and give an example for how to generate a password.
+
