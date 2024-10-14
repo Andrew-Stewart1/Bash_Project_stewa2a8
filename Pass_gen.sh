@@ -1,15 +1,18 @@
 #!/bin/bash
 
 #Offers the option to increase password Complexity and length and then determines the character set used to generate the password based off those parameters
-echo "Please select the Password Complexity"
+echo "Please select the Password Complexity 1-5 - (The default value is 3)"
 read pass_Comp
-echo "Please enter the password length, the default is 15 characters long."
+echo "Please enter the password length - (The default is 15 characters long):"
 read pass_len
 charSet=""
-
+#If no complexity is set default to the middle at 3 
+if [[ -z "$pass_Comp" ]]; then
+pass_Comp=3
+fi
 #If no length is set default to NIST recommandation of 15 characters
 if [[ -z "$pass_len" ]]; then
-passLen=15
+pass_len=15
 fi
 
 #Check the complexity that was set by user
